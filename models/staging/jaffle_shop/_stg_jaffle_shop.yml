@@ -5,18 +5,20 @@ models:
         data_tests:
           - unique
           - not_null
+
   - name: stg_jaffle_shop__orders
     columns:
       - name: order_id
         data_tests:
           - unique
           - not_null
-      - name: order_status
+      - name: status
         data_tests:
-          - accepted_values: 
-              values: 
-                - completed
-                - shipped
-                - placed
-                - return_pending
-                - returned
+          - accepted_values:
+              arguments:
+                values:
+                  - completed
+                  - shipped
+                  - returned
+                  - placed
+                  - return_pending
